@@ -1,6 +1,14 @@
 // Initialize Lucide icons
 lucide.createIcons();
 
+// Desactivar clic derecho en toda la página para proteger el contenido
+document.addEventListener('contextmenu', (e) => {
+    // Solo bloqueamos si el objetivo es un video o está dentro de un contenedor de video
+    if (e.target.tagName === 'VIDEO' || e.target.closest('[data-video-src]')) {
+        e.preventDefault();
+    }
+});
+
 const modal = document.getElementById('leadModal');
 const modalBox = document.getElementById('modalBox');
 const successMessage = document.getElementById('successMessage');
@@ -50,6 +58,10 @@ function loadAndPlayVideo(containerId) {
     video.autoplay = true;
     video.controls = true;
     video.loop = true;
+
+    // Desactivar clic derecho y botón de descarga
+    video.setAttribute('controlsList', 'nodownload');
+    video.oncontextmenu = (e) => e.preventDefault();
 
     // Limpiar contenido previo (imagen y botón) pero mantener info
     container.innerHTML = '';
