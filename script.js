@@ -30,6 +30,31 @@ function closeModal() {
     }, 300); // Wait for transition to finish
 }
 
+function loadAndPlayVideo(containerId) {
+    const container = document.getElementById(containerId);
+    const videoSrc = container.getAttribute('data-video-src');
+
+    // Si ya hay un video, no hacemos nada
+    if (container.querySelector('video')) return;
+
+    // Crear el elemento de video
+    const video = document.createElement('video');
+    video.src = videoSrc;
+    video.className = 'absolute inset-0 w-full h-full object-cover z-20';
+    video.autoplay = true;
+    video.controls = true;
+    video.loop = true;
+
+    // Limpiar contenido previo (imagen y botón) pero mantener info
+    container.innerHTML = '';
+    container.appendChild(video);
+
+    // Forzar el play ya que algunos navegadores bloquean el autoplay
+    video.play().catch(error => {
+        console.log("El autoplay fue bloqueado por el navegador, el usuario debe interactuar con los controles.");
+    });
+}
+
 
 
 // FAQ Toggle Logic

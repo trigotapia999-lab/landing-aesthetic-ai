@@ -122,19 +122,19 @@
             <div
                 class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-4 md:pb-0 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-auto md:px-0">
                 <!-- Video 1 -->
-                <div
+                <div id="video-card-1" data-video-src="videos/video1.mp4"
                     class="reveal flex-none w-[80%] sm:w-[60%] md:w-auto snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl">
                     <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80"
                         alt="Experiencia Paciente"
                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-brandPurple/80 group-hover:scale-110 transition-all cursor-pointer">
+                        <div onclick="loadAndPlayVideo('video-card-1')"
+                            class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-brandPurple/80 group-hover:scale-110 transition-all cursor-pointer z-10">
                             <i data-lucide="play" class="w-8 h-8 ml-1"></i>
                         </div>
                     </div>
-                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <div class="absolute bottom-0 left-0 p-6 w-full pointer-events-none">
                         <span
                             class="bg-brandPurple text-white text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full mb-3 inline-block">Representación
                             Experiencia</span>
@@ -143,19 +143,19 @@
                 </div>
 
                 <!-- Video 2 -->
-                <div
+                <div id="video-card-2" data-video-src="videos/video2.mp4"
                     class="reveal reveal-delay-100 flex-none w-[80%] sm:w-[60%] md:w-auto snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl md:-translate-y-6">
                     <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80"
                         alt="Doctora IA"
                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-brandCyan/80 group-hover:scale-110 transition-all cursor-pointer">
+                        <div onclick="loadAndPlayVideo('video-card-2')"
+                            class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-brandCyan/80 group-hover:scale-110 transition-all cursor-pointer z-10">
                             <i data-lucide="play" class="w-8 h-8 ml-1"></i>
                         </div>
                     </div>
-                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <div class="absolute bottom-0 left-0 p-6 w-full pointer-events-none">
                         <span
                             class="bg-brandCyan text-darkBg text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full mb-3 inline-block">Avatar
                             Médico</span>
@@ -164,19 +164,19 @@
                 </div>
 
                 <!-- Video 3 -->
-                <div
+                <div id="video-card-3" data-video-src="videos/video3.mp4"
                     class="reveal reveal-delay-200 flex-none w-[80%] sm:w-[60%] md:w-auto snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl">
                     <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80"
                         alt="Demostración"
                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-brandPurple/80 group-hover:scale-110 transition-all cursor-pointer">
+                        <div onclick="loadAndPlayVideo('video-card-3')"
+                            class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 group-hover:bg-brandPurple/80 group-hover:scale-110 transition-all cursor-pointer z-10">
                             <i data-lucide="play" class="w-8 h-8 ml-1"></i>
                         </div>
                     </div>
-                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <div class="absolute bottom-0 left-0 p-6 w-full pointer-events-none">
                         <span
                             class="bg-green-500 text-white text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full mb-3 inline-block">Visita
                             de Paciente</span>
