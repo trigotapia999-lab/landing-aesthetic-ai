@@ -115,6 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(leadForm);
 
+            // Sanitización básica (eliminar etiquetas HTML de los inputs de texto)
+            for (let [key, value] of formData.entries()) {
+                if (typeof value === 'string') {
+                    formData.set(key, value.replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+                }
+            }
+
             try {
                 // ID de Formspree actualizado
                 const response = await fetch('https://formspree.io/f/xeerqwqp', {

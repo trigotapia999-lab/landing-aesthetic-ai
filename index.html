@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anuncios UGC con IA para Clínicas Estéticas</title>
+    <!-- Basic Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -633,6 +636,10 @@
                     <input type="email" name="email" required
                         class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPurple focus:ring-1 focus:ring-brandPurple"
                         placeholder="contacto@tuclinica.com">
+                </div>
+                <div style="display:none;">
+                    <label for="_gotcha">Ocultame</label>
+                    <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off" />
                 </div>
                 <button type="submit" id="submitBtn"
                     class="w-full bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-bold py-4 rounded-lg mt-4 transition-colors shadow-lg flex items-center justify-center">
