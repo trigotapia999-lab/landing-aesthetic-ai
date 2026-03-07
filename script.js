@@ -14,11 +14,17 @@ function openModal() {
         modalBox.classList.add('scale-100', 'opacity-100');
     }, 10);
 
-    // Reset form state if it was submitted before
-    if (leadForm) leadForm.reset();
-    if (leadForm) leadForm.style.display = 'block';
     successMessage.classList.add('hidden');
     successMessage.classList.remove('flex');
+
+    // TikTok Event: Click en el botón de Auditoría (ViewContent)
+    if (typeof ttq !== 'undefined') {
+        ttq.track('ClickButton', {
+            content_name: 'Abrir Modal Auditoria',
+            value: 0,
+            currency: 'CLP'
+        });
+    }
 }
 
 function closeModal() {
@@ -124,6 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelector('#modalBox > div.text-center').style.display = 'none';
                     successMessage.classList.remove('hidden');
                     successMessage.classList.add('flex');
+
+                    // TikTok Event: Formulario enviado con éxito (CompleteRegistration)
+                    if (typeof ttq !== 'undefined') {
+                        ttq.track('CompleteRegistration', {
+                            content_name: 'Formulario Auditoria',
+                            value: 0,
+                            currency: 'CLP'
+                        });
+                    }
 
                     setTimeout(() => {
                         document.querySelector('#modalBox > div.text-center').style.display = 'block';
