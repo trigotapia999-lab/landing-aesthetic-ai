@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 // 2. Enviar directamente a Make.com (para automatización de WhatsApp gratis)
-                const MAKE_WEBHOOK_URL = ''; // PEGA TU URL DE MAKE AQUÍ (ej. 'https://hook.us1.make.com/xxxxxx')
+                const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/9f7a3vz2km79i2mtwg4otfxb046kenwa';
 
                 let makePromise = Promise.resolve(); // Por defecto no hace nada si está vacío
                 if (MAKE_WEBHOOK_URL !== '') {
