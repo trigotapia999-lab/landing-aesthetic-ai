@@ -173,6 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Añadir prefijo para WhatsApp automáticamente
+            if (formData.has('whatsapp')) {
+                formData.set('whatsapp', '569' + formData.get('whatsapp'));
+            }
+
             try {
                 // 1. Enviar a Formspree (para notificaciones por correo gratuitas)
                 const formspreePromise = fetch('https://formspree.io/f/xeerqwqp', {
