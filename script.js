@@ -169,14 +169,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                // ID de Formspree actualizado
-                const response = await fetch('https://formspree.io/f/xeerqwqp', {
+                // 1. Enviar a Formspree (para notificaciones por correo gratuitas)
+                const formspreePromise = fetch('https://formspree.io/f/xeerqwqp', {
                     method: 'POST',
                     body: formData,
                     headers: {
                         'Accept': 'application/json'
                     }
                 });
+
+                // 2. Enviar directamente a Make.com (para automatización de WhatsApp gratis)
+                const MAKE_WEBHOOK_URL = ''; // PEGA TU URL DE MAKE AQUÍ (ej. 'https://hook.us1.make.com/xxxxxx')
+
+                let makePromise = Promise.resolve(); // Por defecto no hace nada si está vacío
+                if (MAKE_WEBHOOK_URL !== '') {
+                    makePromise = fetch(MAKE_WEBHOOK_URL, {
+                        method: 'POST',
+                        body: formData
+                    }).catch(err => console.error("Error silencioso Make:", err)); // No bloquear UX si falla
+                }
+
+                // Esperamos a que Formspree responda, Make corre en paralelo
+                const [response] = await Promise.all([formspreePromise, makePromise]);
 
                 if (response.ok) {
                     leadForm.style.display = 'none';
