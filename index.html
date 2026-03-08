@@ -678,6 +678,18 @@
                         class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPurple focus:ring-1 focus:ring-brandPurple"
                         placeholder="contacto@tuclinica.com">
                 </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1">WhatsApp (Para respuesta
+                        inmediata)</label>
+                    <div class="relative flex items-center">
+                        <span class="absolute left-4 text-gray-400 font-medium border-r border-gray-700 pr-2">+56</span>
+                        <input type="tel" name="whatsapp" required pattern="[9][0-9]{8}"
+                            title="Ingresa 9 dígitos empezando por 9"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-16 pr-4 py-3 text-white focus:outline-none focus:border-brandPurple focus:ring-1 focus:ring-brandPurple"
+                            placeholder="9 1234 5678">
+                    </div>
+                </div>
                 <div style="display:none;">
                     <label for="_gotcha">Ocultame</label>
                     <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off" />
