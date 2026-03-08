@@ -57,10 +57,11 @@
                     <span class="font-bold text-xl tracking-wider">Aesthetic<span
                             class="text-brandPurple">AI</span></span>
                 </div>
-                <div class="hidden md:block">
+                <div class="">
                     <button onclick="openModal()"
-                        class="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.5)]">
-                        Agendar Auditoría
+                        class="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full font-semibold text-sm md:text-base transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                        <span class="hidden sm:inline">Agendar Auditoría</span>
+                        <span class="sm:hidden">Agendar</span>
                     </button>
                 </div>
             </div>
@@ -140,7 +141,7 @@
 
             <!-- Contenedor modificado: Flex (slider) en móvil, Grid en desktop -->
             <div
-                class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-4 md:pb-0 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-auto md:px-0">
+                class="flex overflow-x-auto overflow-y-hidden no-scrollbar snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-4 md:pb-0 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-auto md:px-0">
                 <!-- Video 1 -->
                 <div id="video-card-1" data-video-src="videos/video1.mp4"
                     class="reveal flex-none w-[80%] sm:w-[60%] md:w-auto snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl">
@@ -298,7 +299,7 @@
 
             <!-- Contenedor modificado: Flex (slider) en móvil, Grid en desktop -->
             <div
-                class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 pb-4 md:pb-0 scrollbar-hide">
+                class="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 pb-4 md:pb-0 scrollbar-hide">
                 <!-- Feature 1 -->
                 <div
                     class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center reveal reveal-delay-100 bg-gray-800/30 border border-gray-700/50 p-8 rounded-2xl hover:bg-gray-800/50 transition-colors">

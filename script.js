@@ -89,6 +89,27 @@ function toggleFaq(id) {
     }
 }
 
+// Lógica para Navbar Inteligente
+let lastScrollY = window.scrollY;
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    // Solo aplicar la funcionalidad después de bajar un poco (ej: 50px) para evitar saltos.
+    if (window.scrollY > 50) {
+        if (window.scrollY > lastScrollY) {
+            // Scroll down
+            nav.classList.add('header-hidden');
+        } else {
+            // Scroll up
+            nav.classList.remove('header-hidden');
+        }
+    } else {
+        // En la parte superior siempre visible
+        nav.classList.remove('header-hidden');
+    }
+    lastScrollY = window.scrollY;
+});
+
 // Scroll Reveal Animations & Formspree
 document.addEventListener('DOMContentLoaded', () => {
     // Reveal Animations

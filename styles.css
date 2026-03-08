@@ -39,13 +39,23 @@ img {
 }
 
 /* Ocultar barra de desplazamiento para el slider en móvil */
-.no-scrollbar::-webkit-scrollbar {
+/* Soportar ambas clases usadas (no-scrollbar, scrollbar-hide) */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
 
-.no-scrollbar {
+.no-scrollbar,
+.scrollbar-hide {
     -ms-overflow-style: none;
+    /* IE and Edge */
     scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Header inteligente (Ocultar al bajar) */
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 /* Scroll Reveal Animations */
