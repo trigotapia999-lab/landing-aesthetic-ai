@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // TikTok Event: Formulario enviado con éxito (CompleteRegistration)
                     if (typeof ttq !== 'undefined') {
                         ttq.track('CompleteRegistration', {
-                            content_name: 'Formulario Auditoria',
+                            content_name: 'Reserva de Cupo',
                             value: 0,
                             currency: 'CLP'
                         });
