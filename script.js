@@ -132,6 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(reveal);
     });
 
+    // Tracking para botón de WhatsApp en el mensaje de éxito
+    const whatsappSuccessBtn = document.getElementById('whatsappSuccessBtn');
+    if (whatsappSuccessBtn) {
+        whatsappSuccessBtn.addEventListener('click', function () {
+            if (typeof ttq !== 'undefined') {
+                ttq.track('Contact', {
+                    content_name: 'WhatsApp Post-Formulario',
+                    value: 0,
+                    currency: 'CLP'
+                });
+            }
+        });
+    }
     // Formspree Integration
     const leadForm = document.getElementById('leadForm');
     if (leadForm) {
