@@ -22,6 +22,11 @@ function openModal() {
         modalBox.classList.add('scale-100', 'opacity-100');
     }, 10);
 
+    // Restaurar visibilidad del formulario y encabezado si se cerró tras un éxito
+    if (leadForm) leadForm.style.display = 'block';
+    const modalHeader = document.querySelector('#modalBox > div.text-center');
+    if (modalHeader) modalHeader.style.display = 'block';
+
     successMessage.classList.add('hidden');
     successMessage.classList.remove('flex');
 
@@ -206,10 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             currency: 'CLP'
                         });
                     }
-
-                    setTimeout(() => {
-                        document.querySelector('#modalBox > div.text-center').style.display = 'block';
-                    }, 500);
 
                     leadForm.reset();
                 } else {
