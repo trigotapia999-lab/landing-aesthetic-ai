@@ -171,9 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     successMessage.classList.remove('hidden');
                     successMessage.classList.add('flex');
 
-                    // TikTok Event: Formulario enviado con éxito (CompleteRegistration)
+                    // TikTok Event: Formulario enviado con éxito (Lead)
                     if (typeof ttq !== 'undefined') {
-                        ttq.track('CompleteRegistration', {
+                        ttq.track('SubmitForm', {
                             content_name: 'Reserva de Cupo',
                             value: 0,
                             currency: 'CLP'
