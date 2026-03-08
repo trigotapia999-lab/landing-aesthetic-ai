@@ -182,3 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Seguimiento de clic en WhatsApp
+document.getElementById('whatsapp-btn')?.addEventListener('click', () => {
+    ttq.track('Contact', {
+        content_name: 'WhatsApp Chat',
+        content_category: 'Lead'
+    });
+});
