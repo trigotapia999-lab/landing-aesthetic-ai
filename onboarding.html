@@ -192,19 +192,19 @@
                     <h2 class="text-xl font-bold">4. Material Visual (Archivos)</h2>
                 </div>
 
-                <div class="space-y-2">
-                    <label class="block text-sm font-semibold text-gray-300">Sube fotos o videos (Antes/Después,
-                        Clínica, Equipo)</label>
-                    <div class="relative group">
-                        <input type="file" name="archivos" multiple accept="image/*,video/*"
-                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
-                        <div
-                            class="w-full bg-white/5 border border-dashed border-white/30 rounded-xl px-4 py-8 text-center group-hover:border-[#8b5cf6] transition-all">
-                            <i data-lucide="upload-cloud"
-                                class="mx-auto text-gray-400 w-8 h-8 mb-2 group-hover:text-[#8b5cf6] transition-all"></i>
-                            <p class="text-sm text-gray-300 font-medium">Haz clic o arrastra tus archivos aquí</p>
-                            <p class="text-xs text-gray-500 mt-1">Imágenes o videos cortos (Opcional)</p>
-                        </div>
+                <div class="space-y-3">
+                    <label class="block text-sm font-semibold text-gray-300">Enlace a Google Drive o Dropbox con tu
+                        material</label>
+                    <input type="url" name="enlace_archivos"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#8b5cf6] transition-all"
+                        placeholder="https://drive.google.com/drive/folders/...">
+                    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 flex gap-2">
+                        <i data-lucide="alert-triangle" class="text-yellow-500 w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                        <p class="text-xs text-yellow-200/80 leading-relaxed">
+                            Asegúrate de que el enlace sea <strong class="text-yellow-500">Público (Cualquier persona
+                                con el enlace puede ver)</strong>. Sube fotos de antes y después, de la clínica, o de tu
+                            equipo para usar en tus anuncios.
+                        </p>
                     </div>
                 </div>
             </section>
