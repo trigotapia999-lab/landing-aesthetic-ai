@@ -85,27 +85,113 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 lg:items-center">
-                <!-- Left Column: Copy & CTAs -->
-                <div class="text-left">
+            <!-- Usamos flex-col-reverse en movil, y grid en desktop -->
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 lg:items-center">
+                <!-- Left/Top Column: Copy & CTAs -->
+                <div class="text-left flex flex-col">
                     <div
-                        class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 mb-8">
+                        class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 mb-6 lg:mb-8 w-fit mx-auto lg:mx-0">
                         <i data-lucide="sparkles" class="text-brandPurple w-4 h-4"></i>
                         <span class="text-sm font-medium text-purple-200">Impulsado por IA para Clínicas
                             Estéticas</span>
                     </div>
 
                     <h1
-                        class="reveal reveal-delay-100 text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight mb-6">
-                        Escala tu clínica, <br />
+                        class="reveal reveal-delay-100 text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 lg:mb-6 text-center lg:text-left">
+                        Escala tu clínica, <br class="hidden md:block" />
                         <span class="gradient-text glow-text">Sin grabar nunca más.</span>
                     </h1>
 
-                    <p class="reveal reveal-delay-200 mt-4 text-xl text-gray-300 mb-10 leading-relaxed font-medium">
-                        Consigue el triple de citas invirtiendo lo mismo en publicidad.
+                    <p
+                        class="reveal reveal-delay-200 mt-2 lg:mt-4 text-lg lg:text-xl text-gray-300 mb-8 lg:mb-10 leading-relaxed font-medium text-center lg:text-left">
+                        Deja de perder horas de tu agenda grabando videos mediocres o pagando fortunas a influencers.
+                        Obtén 20 anuncios de alta conversión al mes con avatares médicos hiperrealistas.
                     </p>
 
-                    <div class="reveal reveal-delay-300 flex flex-col sm:flex-row gap-4">
+                    <!-- Visible ONLY on mobile: Videos inject here (order manipulation) -->
+                    <div class="reveal reveal-delay-200 block lg:hidden w-full mb-8">
+                        <div class="flex items-center justify-between mb-4 px-2">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10">
+                                <i data-lucide="play-circle" class="text-brandCyan w-4 h-4"></i>
+                                <span class="text-xs font-medium text-cyan-200">Calidad de Estudio, Generado por
+                                    IA</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Desliza <i data-lucide="arrow-right"
+                                    class="inline w-3 h-3"></i></span>
+                        </div>
+
+                        <!-- Carousel Container Mobile -->
+                        <div
+                            class="flex overflow-x-auto overflow-y-hidden no-scrollbar snap-x snap-mandatory gap-4 pb-4 px-2 -mx-4 sm:mx-0 sm:px-0">
+                            <!-- Video 1 Mobile -->
+                            <div id="video-card-1-mob" data-video-src="videos/video1.mp4"
+                                class="flex-none w-[65%] sm:w-[50%] snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl">
+                                <img src="assets/video1-cover.png" alt="Experiencia Paciente"
+                                    class="w-full h-full object-cover opacity-60">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div onclick="loadAndPlayVideo('video-card-1-mob')"
+                                        class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 z-10 cursor-pointer">
+                                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-4 w-full pointer-events-none">
+                                    <span
+                                        class="bg-brandPurple text-white text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full mb-2 inline-block">Contenido
+                                        UGC</span>
+                                    <h3 class="text-sm font-bold text-white leading-tight">Rinomodelación</h3>
+                                </div>
+                            </div>
+
+                            <!-- Video 2 Mobile -->
+                            <div id="video-card-2-mob" data-video-src="videos/video2.mp4"
+                                class="flex-none w-[65%] sm:w-[50%] snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl">
+                                <img src="assets/video2-cover.png" alt="Doctora IA"
+                                    class="w-full h-full object-cover opacity-60">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div onclick="loadAndPlayVideo('video-card-2-mob')"
+                                        class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 z-10 cursor-pointer">
+                                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-4 w-full pointer-events-none">
+                                    <span
+                                        class="bg-brandCyan text-darkBg text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full mb-2 inline-block">Demostración</span>
+                                    <h3 class="text-sm font-bold text-white leading-tight">Armonización Facial</h3>
+                                </div>
+                            </div>
+
+                            <!-- Video 3 Mobile -->
+                            <div id="video-card-3-mob" data-video-src="videos/video3.mp4"
+                                class="flex-none w-[65%] sm:w-[50%] snap-center relative group rounded-2xl overflow-hidden border border-gray-700 aspect-[9/16] bg-gray-800 shadow-xl">
+                                <img src="assets/video3-cover.png" alt="Demostración"
+                                    class="w-full h-full object-cover opacity-60">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div onclick="loadAndPlayVideo('video-card-3-mob')"
+                                        class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 z-10 cursor-pointer">
+                                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-4 w-full pointer-events-none">
+                                    <span
+                                        class="bg-green-500 text-white text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full mb-2 inline-block">Autoridad</span>
+                                    <h3 class="text-sm font-bold text-white leading-tight">Lipo VASER</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal reveal-delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <button onclick="openModal()"
                             class="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(139,92,246,0.6)] flex items-center justify-center gap-2">
                             Consultar Disponibilidad
@@ -115,7 +201,7 @@
 
                     <!-- Social Proof simple -->
                     <div
-                        class="reveal reveal-delay-300 mt-12 flex flex-col md:flex-row items-center md:justify-start justify-center gap-4 text-sm text-gray-400">
+                        class="reveal reveal-delay-300 mt-8 lg:mt-12 flex flex-col md:flex-row items-center justify-center lg:justify-start gap-4 text-sm text-gray-400">
                         <div class="flex -space-x-3">
                             <img class="w-10 h-10 rounded-full border-2 border-darkBg"
                                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
@@ -135,8 +221,8 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Video Examples -->
-                <div class="reveal reveal-delay-200">
+                <!-- Right Column (Desktop Only): Video Examples -->
+                <div class="reveal reveal-delay-200 hidden lg:block">
                     <div class="flex items-center justify-between mb-4 px-2">
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10">
