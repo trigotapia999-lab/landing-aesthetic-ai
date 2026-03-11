@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // TikTok Event: Formulario enviado con éxito (Lead)
                     if (typeof ttq !== 'undefined') {
-                        ttq.track('SubmitForm', {
+                        ttq.track('Lead', {
                             content_name: 'Reserva de Cupo',
                             value: 0,
                             currency: 'CLP'
